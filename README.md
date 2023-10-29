@@ -1,2 +1,11 @@
-# Moblie_number_details-by-python
-in  a this code we can find that any type of nubmer belonng to which sem or which country and which place
+ import phonenumbers
+from phonenumbers import timezone, geocoder, carrier
+number = input("enter your  number with +__:")
+phone = phonenumbers.parse(number)
+time = timezone.time_zones_for_number(phone)
+car = carrier.name_for_number(phone, lang="en")
+reg = geocoder.description_for_number(phone, "en")
+print(phone)
+print(time)
+print(car)
+print(reg)
